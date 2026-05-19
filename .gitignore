@@ -1,0 +1,110 @@
+# =============================================================================
+# yt-summariser — .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Pipeline output — never commit these
+# -----------------------------------------------------------------------------
+
+# Generated Markdown reports
+output/
+*.md
+README.md                          # keep the README
+
+# Generated highlight videos
+*_highlights.mp4
+*.mp4
+*.mkv
+*.webm
+
+# AOF files from redis_server (sibling project)
+*.aof
+
+# -----------------------------------------------------------------------------
+# Intermediate pipeline artefacts
+# -----------------------------------------------------------------------------
+
+# Whisper audio downloads
+audio.mp3
+audio.m4a
+*.wav
+
+# Frame extraction PNGs
+frame_*.png
+
+# yt-dlp subtitle files
+*.vtt
+*.srt
+*.ttml
+
+# ffmpeg concat lists
+concat.txt
+
+# Temp directories created by pipeline
+yts_*/
+
+# -----------------------------------------------------------------------------
+# Models — too large for git (use huggingface-hub / manual download)
+# -----------------------------------------------------------------------------
+
+# Mistral / LLaMA GGUF weights
+*.gguf
+*.bin
+*.safetensors
+
+# Whisper model cache
+~/.cache/whisper/
+
+# HuggingFace model cache (referenced here for documentation only)
+# actual cache lives at ~/.cache/huggingface/ — outside this repo
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# -----------------------------------------------------------------------------
+# Testing & tooling
+# -----------------------------------------------------------------------------
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# -----------------------------------------------------------------------------
+# Editors & OS
+# -----------------------------------------------------------------------------
+
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
