@@ -9,7 +9,6 @@
 # Generated Markdown reports
 output/
 *.md
-README.md                          # keep the README
 
 # Generated highlight videos
 *_highlights.mp4
