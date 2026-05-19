@@ -8,7 +8,6 @@
 
 # Generated Markdown reports
 output/
-*.md
 
 # Generated highlight videos
 *_highlights.mp4
