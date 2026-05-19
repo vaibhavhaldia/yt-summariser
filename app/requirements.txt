@@ -1,0 +1,16 @@
+# ── GUI framework ────────────────────────────────────────────────────────────
+PySide6>=6.6                # Qt6 Python bindings (LGPL, LTS-safe)
+
+# ── All summarise pipeline deps (from summarise/requirements.txt) ─────────
+yt-dlp                      # YouTube download + subtitle extraction
+scikit-learn                # TF-IDF scoring
+sentence-transformers       # MiniLM semantic scoring + chapter detection
+transformers                # BART chapter titles + moondream2 captions
+torch                       # Required by transformers + sentence-transformers
+accelerate                  # Speeds up transformers inference
+llama-cpp-python            # Mistral-7B local LLM inference
+huggingface-hub             # Auto-downloads GGUF model
+openai-whisper              # ASR fallback when no captions
+easyocr                     # Frame OCR enrichment
+sumy                        # Extractive summarisation fallback
+keybert                     # Key concept extraction

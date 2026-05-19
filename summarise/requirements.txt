@@ -1,0 +1,28 @@
+# ── Core (always required) ────────────────────────────────────────────────
+yt-dlp                  # YouTube download, subtitle extraction (VTT), stream URL resolution  REQUIRED
+scikit-learn            # TF-IDF scoring (scorer.py, segmenter.py, synthesiser.py)            REQUIRED
+
+# ── Semantic scoring (strongly recommended, ~80 MB download once) ─────────
+sentence-transformers   # all-MiniLM-L6-v2 embeddings: semantic scoring + chapter detection  OPTIONAL (strongly recommended)
+
+# ── Summarisation / chapter titles (optional, ~1.6 GB download once) ──────
+transformers            # BART (facebook/bart-large-cnn) for chapter titles + moondream2 visual captioning  OPTIONAL
+torch                   # Required by transformers and sentence-transformers                  OPTIONAL
+accelerate              # Speeds up transformers inference on CPU and GPU                     OPTIONAL
+
+# ── Local LLM synthesis (optional but recommended, ~4 GB download once) ───
+llama-cpp-python        # Mistral-7B-Instruct Q4_K_M GGUF inference (synthesiser.py)         OPTIONAL (strongly recommended)
+huggingface-hub         # Auto-downloads the Mistral GGUF model file on first use             OPTIONAL
+
+# ── Whisper ASR fallback (optional, used when no captions available) ───────
+openai-whisper          # Local Whisper transcription when yt-dlp finds no subtitles          OPTIONAL
+
+# ── Frame enrichment (optional) ───────────────────────────────────────────
+easyocr                 # OCR on extracted video frames (enricher.py)                         OPTIONAL
+# opencv-python         # easyocr dependency — auto-installed with easyocr                   OPTIONAL (auto)
+
+# ── Extractive summarisation fallback (optional, tiny) ────────────────────
+sumy                    # LSA extractive summariser used by synthesiser.py when LLM absent    OPTIONAL
+
+# ── Keyword extraction (optional) ─────────────────────────────────────────
+keybert                 # KeyBERT key-concept extraction (synthesiser.py fallback)            OPTIONAL
